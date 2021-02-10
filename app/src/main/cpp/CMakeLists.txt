@@ -6,6 +6,17 @@
 #cmake_minimum_required(VERSION 3.10.2)
 cmake_minimum_required(VERSION 3.4.1)
 
+set(key helloworld)
+message(${key})
+
+message(${CMAKE_CURRENT_LIST_FILE})
+message(${CMAKE_CURRENT_LIST_DIR})
+
+if (TRUE)
+    message("this is true")
+endif ()
+
+
 # Declares and names the project.
 
 project("myapplication")
@@ -24,6 +35,12 @@ add_library( # Sets the name of the library.
         # Provides a relative path to your source file(s).
         native-lib.cpp
         )
+
+add_library(
+        people-lib
+        SHARED
+        people/People.cpp
+)
 
 # Searches for a specified prebuilt library and stores the path as a
 # variable. Because CMake includes system libraries in the search path by
@@ -44,7 +61,7 @@ find_library( # Sets the name of the path variable.
 
 target_link_libraries( # Specifies the target library.
         native-lib
-        com_google_ase_Exec
+        people-lib
 
         # Links the target library to the log library
         # included in the NDK.
