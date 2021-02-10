@@ -1,4 +1,4 @@
-package com.example.myapplication.utils;
+package com.example.ndk.utils;
 
 /**
  * @author Chris

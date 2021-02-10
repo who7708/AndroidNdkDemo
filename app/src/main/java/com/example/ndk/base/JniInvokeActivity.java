@@ -1,11 +1,11 @@
-package com.example.myapplication.base;
+package com.example.ndk.base;
 
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
-import com.example.myapplication.BaseActivity;
-import com.example.myapplication.R;
+import com.example.ndk.BaseActivity;
+import com.example.ndk.R;
 
 public class JniInvokeActivity extends BaseActivity {
 

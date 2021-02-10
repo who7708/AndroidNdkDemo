@@ -2,11 +2,11 @@
 #include <base.h>
 #include <string>
 
-#include "../people/People.h"
+#include <People.h>
 
 extern "C"
 JNIEXPORT jstring JNICALL
-Java_com_example_myapplication_base_JniInvoke_stringFromJNI(JNIEnv *env, jobject thiz) {
+Java_com_example_ndk_base_JniInvoke_stringFromJNI(JNIEnv *env, jobject thiz) {
     std::string hello = "Hello from C++";
 
     LOGE("hello world");
@@ -16,6 +16,6 @@ Java_com_example_myapplication_base_JniInvoke_stringFromJNI(JNIEnv *env, jobject
 
 extern "C"
 JNIEXPORT jstring JNICALL
-Java_com_example_myapplication_base_JniInvoke_getString(JNIEnv *env, jobject thiz) {
+Java_com_example_ndk_base_JniInvoke_getString(JNIEnv *env, jobject thiz) {
     return env->NewStringUTF("hello world getString method");
 }

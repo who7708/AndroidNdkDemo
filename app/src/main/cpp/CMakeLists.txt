@@ -20,7 +20,7 @@ cmake_minimum_required(VERSION 3.4.1)
 
 # Declares and names the project.
 
-project("myapplication")
+project("android-ndk-demo")
 
 # Creates and names a library, sets it as either STATIC
 # or SHARED, and provides the relative paths to its source code.
@@ -46,6 +46,7 @@ add_library(
 
 # 定义搜索路径
 include_directories(${CMAKE_SOURCE_DIR}/base/)
+include_directories(${CMAKE_SOURCE_DIR}/people/)
 
 # Searches for a specified prebuilt library and stores the path as a
 # variable. Because CMake includes system libraries in the search path by

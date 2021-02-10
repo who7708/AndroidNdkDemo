@@ -1,11 +1,11 @@
-package com.example.myapplication.load;
+package com.example.ndk.load;
 
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
-import com.example.myapplication.BaseActivity;
-import com.example.myapplication.R;
+import com.example.ndk.BaseActivity;
+import com.example.ndk.R;
 
 public class JNIDynamicLoadActivity extends BaseActivity {
 

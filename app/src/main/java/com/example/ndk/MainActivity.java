@@ -1,4 +1,4 @@
-package com.example.myapplication;
+package com.example.ndk;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -6,8 +6,8 @@ import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.myapplication.base.JniInvokeActivity;
-import com.example.myapplication.load.JNIDynamicLoadActivity;
+import com.example.ndk.base.JniInvokeActivity;
+import com.example.ndk.load.JNIDynamicLoadActivity;
 
 public class MainActivity extends AppCompatActivity {
 

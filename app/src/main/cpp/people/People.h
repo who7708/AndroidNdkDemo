@@ -2,8 +2,8 @@
 // Created by Chris on 2/10/21.
 //
 
-#ifndef MY_APPLICATION_PEOPLE_H
-#define MY_APPLICATION_PEOPLE_H
+#ifndef ANDROID_NDK_PEOPLE_H
+#define ANDROID_NDK_PEOPLE_H
 
 #include <string>
 
@@ -14,4 +14,4 @@ public:
 };
 
 
-#endif //MY_APPLICATION_PEOPLE_H
+#endif //ANDROID_NDK_PEOPLE_H

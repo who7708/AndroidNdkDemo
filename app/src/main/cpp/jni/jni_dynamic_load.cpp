@@ -4,7 +4,7 @@
 
 #include <base.h>
 
-#define JAVA_CLASS_NAME "com/example/myapplication/load/JNIDynamicLoad"
+#define JAVA_CLASS_NAME "com/example/ndk/load/JNIDynamicLoad"
 
 jstring getMessage(JNIEnv *env, jobject jobj) {
     LOGE("jni_dynamic_load.getMessage");
