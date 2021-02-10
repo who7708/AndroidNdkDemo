@@ -3,6 +3,7 @@
 
 # Sets the minimum version of CMake required to build the native library.
 
+# 指定cmake版本
 #cmake_minimum_required(VERSION 3.10.2)
 cmake_minimum_required(VERSION 3.4.1)
 
@@ -34,13 +35,8 @@ add_library( # Sets the name of the library.
 
         # Provides a relative path to your source file(s).
         jni/native-lib.cpp
-        )
-
-add_library(
-        people-lib
-        SHARED
         people/People.cpp
-)
+        )
 
 add_library(
         dynamic-lib
@@ -70,7 +66,6 @@ find_library( # Sets the name of the path variable.
 
 target_link_libraries( # Specifies the target library.
         native-lib
-        people-lib
 
         # Links the target library to the log library
         # included in the NDK.
