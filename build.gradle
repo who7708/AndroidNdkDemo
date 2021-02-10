@@ -20,5 +20,7 @@ allprojects {
 }
 
 task clean(type: Delete) {
+    println rootProject.buildDir
     delete rootProject.buildDir
+    delete "app/.cxx"
 }

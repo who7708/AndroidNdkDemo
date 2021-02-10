@@ -7,6 +7,7 @@
 
 #include <string>
 
+
 class People {
 public:
     static std::string getString();
