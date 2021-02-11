@@ -12,5 +12,5 @@ public class JniString {
 
     public native String callNativeString(String str);
 
-    public native void stringMethod(String str);
+    public native String stringMethod(String str);
 }
