@@ -12,7 +12,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/show_result"
-        android:textSize="30sp" />
+        android:textSize="@dimen/default_text_size" />
 
     <ScrollView
         android:layout_width="match_parent"

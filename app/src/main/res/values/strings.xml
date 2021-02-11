@@ -24,5 +24,9 @@
     <string name="primitive_float">基础数据类型float</string>
     <string name="primitive_double">基础数据类型double</string>
     <string name="primitive_boolean">基础数据类型boolean</string>
+    <string name="search">搜索</string>
+    <string name="more">更多</string>
+    <string name="content_description_more">更多内容</string>
+    <string name="content_description_search">搜索内容</string>
 
 </resources>
