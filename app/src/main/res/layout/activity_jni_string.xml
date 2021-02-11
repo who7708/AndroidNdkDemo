@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -9,9 +8,21 @@
     tools:context=".jni.JniStringActivity">
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/sample_text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="@dimen/default_margin"
-        android:text="TextView" />
+        android:text="@string/show_result"
+        android:textSize="@dimen/default_text_size" />
+
+    <Button
+        android:id="@+id/java_jni_string"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/java_jni_string" />
+
+    <Button
+        android:id="@+id/java_jni_string_method"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/java_jni_string_method" />
 </LinearLayout>

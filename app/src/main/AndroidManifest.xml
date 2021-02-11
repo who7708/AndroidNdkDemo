@@ -9,10 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.NdkApplication">
-        <activity android:name=".jni.JniStringActivity"/>
+        <activity android:name=".jni.JniStringActivity" />
         <activity android:name=".jni.JniBasicTypeActivity" />
-        <!--<activity android:name=".MainActivity">-->
-        <activity android:name=".BottomBarActivity">
+        <activity android:name=".MainActivity">
+            <!--<activity android:name=".BottomBarActivity">-->
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

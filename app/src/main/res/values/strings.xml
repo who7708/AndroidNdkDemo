@@ -28,5 +28,7 @@
     <string name="more">更多</string>
     <string name="content_description_more">更多内容</string>
     <string name="content_description_search">搜索内容</string>
+    <string name="java_jni_string">java与jni字符串转换</string>
+    <string name="java_jni_string_method">测试jni字符串方法</string>
 
 </resources>
