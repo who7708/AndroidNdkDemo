@@ -1,46 +1,103 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".MainActivity">
 
-    <Button
-        android:id="@+id/button1"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:onClick="jniInvoke"
-        android:text="jni_invoke" />
+        android:layout_marginStart="@dimen/default_margin"
+        android:layout_marginLeft="@dimen/default_margin"
+        android:layout_marginEnd="@dimen/default_margin"
+        android:layout_marginRight="@dimen/default_margin"
+        android:orientation="vertical">
 
-    <Button
-        android:id="@+id/button2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:onClick="dynamicRegister"
-        android:text="dynamic_register" />
+        <Button
+            android:id="@+id/jni_invoke"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/jni_invoke" />
 
-    <Button
-        android:id="@+id/button3"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Button" />
+        <Button
+            android:id="@+id/dynamic_register"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/dynamic_register" />
 
-    <Button
-        android:id="@+id/button4"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Button" />
+        <Button
+            android:id="@+id/basic_type"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/basic_type" />
 
-    <Button
-        android:id="@+id/button5"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Button" />
+        <Button
+            android:id="@+id/string_convert"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/string_convert" />
 
-    <Button
-        android:id="@+id/button6"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Button" />
-</LinearLayout>
+        <Button
+            android:id="@+id/reference_convert"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/reference_convert" />
+
+        <Button
+            android:id="@+id/access_java_field"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/access_java_field" />
+
+        <Button
+            android:id="@+id/access_java_method"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/access_java_method" />
+
+        <Button
+            android:id="@+id/access_java_method_by_thread"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/access_java_method_by_thread" />
+
+        <Button
+            android:id="@+id/access_java_constructor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/access_java_constructor" />
+
+        <Button
+            android:id="@+id/reference_manage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/reference_manage" />
+
+        <Button
+            android:id="@+id/exception_manage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/exception_manage" />
+
+        <Button
+            android:id="@+id/create_thread"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/create_thread" />
+
+        <Button
+            android:id="@+id/thread_sync"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/thread_sync" />
+
+        <Button
+            android:id="@+id/bitmap_operate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/bitmap_operate" />
+
+    </LinearLayout>
+</ScrollView>

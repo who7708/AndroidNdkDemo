@@ -9,16 +9,18 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.NdkApplication">
-        <activity android:name="com.example.ndk.MainActivity">
+
+        <activity android:name=".jni.JniBasicTypeActivity"/>
+
+        <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.example.ndk.base.JniInvokeActivity" />
-        <activity android:name="com.example.ndk.load.JNIDynamicLoadActivity" />
-
+        <activity android:name=".base.JniInvokeActivity" />
+        <activity android:name=".load.JNIDynamicLoadActivity" />
     </application>
 
 </manifest>

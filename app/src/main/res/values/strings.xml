@@ -1,3 +1,18 @@
 <resources>
     <string name="app_name">Ndk Demo</string>
+    <string name="jni_invoke">java调用jni方法</string>
+    <string name="dynamic_register">函数动态注册</string>
+    <string name="basic_type">java与jni基础数据类型转换</string>
+    <string name="string_convert">java与jni字符串类型转换</string>
+    <string name="reference_convert">java与jni引用类型转换</string>
+    <string name="access_java_field">jni访问java类字段</string>
+    <string name="access_java_method">jni访问java类方法</string>
+    <string name="access_java_method_by_thread">jni子线程访问java类方法</string>
+    <string name="access_java_constructor">jni访问java构造方法</string>
+    <string name="reference_manage">jni引用类型管理</string>
+    <string name="exception_manage">jni异常处理</string>
+    <string name="create_thread">jni中线程的创建</string>
+    <string name="thread_sync">jni中线程的同步</string>
+    <string name="bitmap_operate">jni中Bitmap操作</string>
+    <string name="click_me">CLICK ME...</string>
 </resources>
