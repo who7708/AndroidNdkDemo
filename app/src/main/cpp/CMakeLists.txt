@@ -28,13 +28,13 @@ project("android-ndk-demo")
 # Gradle automatically packages shared libraries with your APK.
 
 add_library( # Sets the name of the library.
-        native-lib
+        invoke-lib
 
         # Sets the library as a shared library.
         SHARED
 
         # Provides a relative path to your source file(s).
-        jni/native-lib.cpp
+        jni/jni_invoke.cpp
         people/People.cpp
         )
 
@@ -42,6 +42,12 @@ add_library(
         dynamic-lib
         SHARED
         jni/jni_dynamic_load.cpp
+)
+
+add_library(
+        basic-type-lib
+        SHARED
+        jni/jni_basic_type.cpp
 )
 
 # 定义搜索路径
@@ -66,7 +72,7 @@ find_library( # Sets the name of the path variable.
 # build script, prebuilt third-party libraries, or system libraries.
 
 target_link_libraries( # Specifies the target library.
-        native-lib
+        invoke-lib
 
         # Links the target library to the log library
         # included in the NDK.
@@ -74,6 +80,13 @@ target_link_libraries( # Specifies the target library.
 
 target_link_libraries( # Specifies the target library.
         dynamic-lib
+
+        # Links the target library to the log library
+        # included in the NDK.
+        ${log-lib})
+
+target_link_libraries( # Specifies the target library.
+        basic-type-lib
 
         # Links the target library to the log library
         # included in the NDK.

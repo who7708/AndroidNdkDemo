@@ -1,20 +1,73 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_marginStart="@dimen/default_margin"
+    android:layout_marginLeft="@dimen/default_margin"
+    android:layout_marginEnd="@dimen/default_margin"
+    android:layout_marginRight="@dimen/default_margin"
+    android:orientation="vertical"
     tools:context=".jni.JniBasicTypeActivity">
 
     <TextView
         android:id="@+id/sample_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/click_me"
+        android:text="@string/show_result"
         android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <Button
+        android:id="@+id/primitive_int"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/primitive_int" />
+
+    <Button
+        android:id="@+id/primitive_byte"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/primitive_byte" />
+
+    <Button
+        android:id="@+id/primitive_char"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/primitive_char" />
+
+    <Button
+        android:id="@+id/primitive_short"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/primitive_short" />
+
+    <Button
+        android:id="@+id/primitive_long"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/primitive_long" />
+
+    <Button
+        android:id="@+id/primitive_float"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/primitive_float" />
+
+    <Button
+        android:id="@+id/primitive_double"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/primitive_double" />
+
+    <Button
+        android:id="@+id/primitive_boolean"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/primitive_boolean" />
+
+</LinearLayout>

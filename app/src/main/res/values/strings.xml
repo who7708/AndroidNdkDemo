@@ -14,5 +14,15 @@
     <string name="create_thread">jni中线程的创建</string>
     <string name="thread_sync">jni中线程的同步</string>
     <string name="bitmap_operate">jni中Bitmap操作</string>
-    <string name="click_me">CLICK ME...</string>
+    <string name="click_me">CLICK ME</string>
+    <string name="show_result">将在显示结果…</string>
+    <string name="primitive_int">基础数据类型int</string>
+    <string name="primitive_byte">基础数据类型byte</string>
+    <string name="primitive_char">基础数据类型char</string>
+    <string name="primitive_short">基础数据类型short</string>
+    <string name="primitive_long">基础数据类型long</string>
+    <string name="primitive_float">基础数据类型float</string>
+    <string name="primitive_double">基础数据类型double</string>
+    <string name="primitive_boolean">基础数据类型boolean</string>
+
 </resources>
