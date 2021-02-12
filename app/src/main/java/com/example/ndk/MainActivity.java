@@ -10,8 +10,9 @@ import com.example.ndk.base.JniInvokeActivity;
 import com.example.ndk.jni.JniAccessFieldActivity;
 import com.example.ndk.jni.JniAccessMethodActivity;
 import com.example.ndk.jni.JniBasicTypeActivity;
-import com.example.ndk.jni.JniStringActivity;
+import com.example.ndk.jni.JniInvokeMethodActivity;
 import com.example.ndk.jni.JniReferenceTypeActivity;
+import com.example.ndk.jni.JniStringActivity;
 import com.example.ndk.load.JNIDynamicLoadActivity;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
@@ -53,7 +54,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         } else if (R.id.access_java_method == v.getId()) {
             startActivity(JniAccessMethodActivity.class);
         } else if (R.id.access_java_method_by_thread == v.getId()) {
-            startActivity(JNIDynamicLoadActivity.class);
+            startActivity(JniInvokeMethodActivity.class);
         } else if (R.id.access_java_constructor == v.getId()) {
             startActivity(JNIDynamicLoadActivity.class);
         } else if (R.id.reference_manage == v.getId()) {

@@ -36,5 +36,7 @@
     <string name="call_instance_method">jni调用java实例方法</string>
     <string name="call_static_method">jni调用java静态方法</string>
     <string name="call_static_method2">jni调用java静态方法2</string>
+    <string name="jni_native_callback">jni通过接口参数回调java方法</string>
+    <string name="jni_thread_callback">jni子线程回调java主线程方法</string>
 
 </resources>

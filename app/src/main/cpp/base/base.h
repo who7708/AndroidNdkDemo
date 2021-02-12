@@ -7,6 +7,7 @@
 
 #include <android/log.h>
 #include <jni.h>
+#include <jvm.h>
 
 #ifndef LOG_TAG
 //Log 的 tag 名字

@@ -74,6 +74,13 @@ add_library(
         jni/jni_access_method.cpp
 )
 
+add_library(
+        callback-lib
+        SHARED
+        base/jvm.cpp
+        jni/jni_invoke_method.cpp
+)
+
 # 定义搜索路径
 include_directories(${CMAKE_SOURCE_DIR}/base/)
 include_directories(${CMAKE_SOURCE_DIR}/people/)
@@ -139,6 +146,13 @@ target_link_libraries( # Specifies the target library.
 
 target_link_libraries( # Specifies the target library.
         access-method-lib
+
+        # Links the target library to the log library
+        # included in the NDK.
+        ${log-lib})
+
+target_link_libraries( # Specifies the target library.
+        callback-lib
 
         # Links the target library to the log library
         # included in the NDK.

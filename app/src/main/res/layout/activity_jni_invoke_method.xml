@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="@dimen/default_margin"
+    android:orientation="vertical"
+    tools:context=".jni.JniInvokeMethodActivity">
+
+    <TextView
+        android:id="@+id/sample_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/show_result" />
+
+    <Button
+        android:id="@+id/jni_native_callback"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/jni_native_callback" />
+
+    <Button
+        android:id="@+id/jni_thread_callback"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/jni_thread_callback" />
+</LinearLayout>
