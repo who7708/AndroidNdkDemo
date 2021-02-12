@@ -33,5 +33,8 @@
     <string name="access_static_field">访问静态字段</string>
     <string name="access_instance_field">访问实例字段</string>
     <string name="static_native_access_field">使用 static native 方法访问静态字段</string>
+    <string name="call_instance_method">jni调用java实例方法</string>
+    <string name="call_static_method">jni调用java静态方法</string>
+    <string name="call_static_method2">jni调用java静态方法2</string>
 
 </resources>

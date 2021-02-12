@@ -8,6 +8,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.ndk.base.JniInvokeActivity;
 import com.example.ndk.jni.JniAccessFieldActivity;
+import com.example.ndk.jni.JniAccessMethodActivity;
 import com.example.ndk.jni.JniBasicTypeActivity;
 import com.example.ndk.jni.JniStringActivity;
 import com.example.ndk.jni.JniReferenceTypeActivity;
@@ -50,7 +51,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         } else if (R.id.access_java_field == v.getId()) {
             startActivity(JniAccessFieldActivity.class);
         } else if (R.id.access_java_method == v.getId()) {
-            startActivity(JNIDynamicLoadActivity.class);
+            startActivity(JniAccessMethodActivity.class);
         } else if (R.id.access_java_method_by_thread == v.getId()) {
             startActivity(JNIDynamicLoadActivity.class);
         } else if (R.id.access_java_constructor == v.getId()) {
