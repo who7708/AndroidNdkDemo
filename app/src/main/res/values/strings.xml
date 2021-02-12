@@ -16,6 +16,7 @@
     <string name="bitmap_operate">jni中Bitmap操作</string>
     <string name="click_me">CLICK ME</string>
     <string name="show_result">将在显示结果…</string>
+    <string name="show_result2">将在显示结果2…</string>
     <string name="primitive_int">基础数据类型int</string>
     <string name="primitive_byte">基础数据类型byte</string>
     <string name="primitive_char">基础数据类型char</string>
@@ -38,5 +39,6 @@
     <string name="call_static_method2">jni调用java静态方法2</string>
     <string name="jni_native_callback">jni通过接口参数回调java方法</string>
     <string name="jni_thread_callback">jni子线程回调java主线程方法</string>
+    <string name="jni_constructor">JNI访问java构造方法</string>
 
 </resources>

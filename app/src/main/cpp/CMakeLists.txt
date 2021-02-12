@@ -81,6 +81,13 @@ add_library(
         jni/jni_invoke_method.cpp
 )
 
+add_library(
+        constructor-lib
+        SHARED
+        base/jvm.cpp
+        jni/jni_constructor_class.cpp
+)
+
 # 定义搜索路径
 include_directories(${CMAKE_SOURCE_DIR}/base/)
 include_directories(${CMAKE_SOURCE_DIR}/people/)
@@ -153,6 +160,13 @@ target_link_libraries( # Specifies the target library.
 
 target_link_libraries( # Specifies the target library.
         callback-lib
+
+        # Links the target library to the log library
+        # included in the NDK.
+        ${log-lib})
+
+target_link_libraries( # Specifies the target library.
+        constructor-lib
 
         # Links the target library to the log library
         # included in the NDK.
