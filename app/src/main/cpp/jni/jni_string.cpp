@@ -25,18 +25,18 @@ Java_com_example_ndk_jni_JniString_stringMethod(JNIEnv *env, jobject thiz, jstri
     const char *str = env->GetStringUTFChars(jstr, JNI_FALSE);
     LOGE("java string is %s", str);
 
+    char buf[128];
     // len = 11
     // 获取java string 的长度
     int len = env->GetStringLength(jstr);
     LOGE("java string lenthg is %d", len);
 
-    char buffer[len - 1];
     // clang 复制
-    strcpy(buffer, str);
-    // env->GetStringUTFRegion(jstr, 0, len - 1, buffer);
-    LOGE("j string is %s", buffer);
+    // strcpy(buffer, str);
+    env->GetStringUTFRegion(jstr, 0, len - 1, buf);
+    LOGE("j string is %s", buf);
 
     env->ReleaseStringUTFChars(jstr, str);
 
-    return env->NewStringUTF(buffer);
+    return env->NewStringUTF(buf);
 }

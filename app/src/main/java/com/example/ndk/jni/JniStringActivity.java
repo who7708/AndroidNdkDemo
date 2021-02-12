@@ -33,7 +33,7 @@ public class JniStringActivity extends BaseActivity {
         findViewById(R.id.java_jni_string_method).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // jniString.stringMethod("我也是字符串");
+                // String ret = jniString.stringMethod("我也是字符串");
                 String ret = jniString.stringMethod("hello world");
                 textView.setText(ret);
             }
