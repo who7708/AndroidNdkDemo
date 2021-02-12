@@ -56,6 +56,12 @@ add_library(
         jni/jni_string.cpp
 )
 
+add_library(
+        reference-lib
+        SHARED
+        jni/jni_reference_type.cpp
+)
+
 # 定义搜索路径
 include_directories(${CMAKE_SOURCE_DIR}/base/)
 include_directories(${CMAKE_SOURCE_DIR}/people/)
@@ -100,6 +106,13 @@ target_link_libraries( # Specifies the target library.
 
 target_link_libraries( # Specifies the target library.
         string-lib
+
+        # Links the target library to the log library
+        # included in the NDK.
+        ${log-lib})
+
+target_link_libraries( # Specifies the target library.
+        reference-lib
 
         # Links the target library to the log library
         # included in the NDK.

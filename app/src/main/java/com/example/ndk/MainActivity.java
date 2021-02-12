@@ -9,6 +9,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.ndk.base.JniInvokeActivity;
 import com.example.ndk.jni.JniBasicTypeActivity;
 import com.example.ndk.jni.JniStringActivity;
+import com.example.ndk.jni.JniReferenceTypeActivity;
 import com.example.ndk.load.JNIDynamicLoadActivity;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
@@ -44,7 +45,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         } else if (R.id.string_convert == v.getId()) {
             startActivity(JniStringActivity.class);
         } else if (R.id.reference_convert == v.getId()) {
-            startActivity(JNIDynamicLoadActivity.class);
+            startActivity(JniReferenceTypeActivity.class);
         } else if (R.id.access_java_field == v.getId()) {
             startActivity(JNIDynamicLoadActivity.class);
         } else if (R.id.access_java_method == v.getId()) {
