@@ -62,6 +62,12 @@ add_library(
         jni/jni_reference_type.cpp
 )
 
+add_library(
+        access-field-lib
+        SHARED
+        jni/jni_access_field.cpp
+)
+
 # 定义搜索路径
 include_directories(${CMAKE_SOURCE_DIR}/base/)
 include_directories(${CMAKE_SOURCE_DIR}/people/)
@@ -113,6 +119,13 @@ target_link_libraries( # Specifies the target library.
 
 target_link_libraries( # Specifies the target library.
         reference-lib
+
+        # Links the target library to the log library
+        # included in the NDK.
+        ${log-lib})
+
+target_link_libraries( # Specifies the target library.
+        access-field-lib
 
         # Links the target library to the log library
         # included in the NDK.

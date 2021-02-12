@@ -20,5 +20,7 @@ Java_com_example_ndk_jni_JniReferenceType_callNativeStringArray(JNIEnv *env, job
     LOGE("first str is %s", str);
     env->ReleaseStringUTFChars(firstStr, str);
 
+    // env->GetIntArrayRegion(str_array)
+
     return env->NewStringUTF(str);
 }
