@@ -16,4 +16,9 @@ public class JniAccessField {
 
     public native long accessInstanceField(Animal animal);
 
+    /**
+     * 自动在生成的jni 方法中,加入 jclass 参数
+     */
+    public static native long staticAccessInstanceField(Animal animal);
+
 }

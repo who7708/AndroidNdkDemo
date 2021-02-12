@@ -40,5 +40,14 @@ public class JniAccessFieldActivity extends BaseActivity {
                 textView.setText(String.valueOf(ret));
             }
         });
+
+        findViewById(R.id.static_native_access_field).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                long ret = jniAccessField.accessInstanceField(animal);
+                LogUtils.i("animal new num is " + Animal.getNum());
+                textView.setText(String.valueOf(ret));
+            }
+        });
     }
 }

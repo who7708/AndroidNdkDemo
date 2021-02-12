@@ -43,3 +43,21 @@ Java_com_example_ndk_jni_JniAccessField_accessInstanceField(JNIEnv *env, jobject
 
     return num;
 }
+
+extern "C"
+JNIEXPORT jlong JNICALL
+Java_com_example_ndk_jni_JniAccessField_staticAccessInstanceField(JNIEnv *env, jclass cls,
+                                                                  jobject animal) {
+    jfieldID fid = env->GetStaticFieldID(cls, "num", "J");
+
+    jlong num = env->GetStaticLongField(cls, fid);
+
+    LOGE("修改前 %lld", num);
+
+    num = num * 3;
+
+    LOGE("修改后 %lld", num);
+    env->SetStaticLongField(cls, fid, num);
+
+    return num;
+}

@@ -32,5 +32,6 @@
     <string name="java_jni_string_method">测试jni字符串方法</string>
     <string name="access_static_field">访问静态字段</string>
     <string name="access_instance_field">访问实例字段</string>
+    <string name="static_native_access_field">使用 static native 方法访问静态字段</string>
 
 </resources>
