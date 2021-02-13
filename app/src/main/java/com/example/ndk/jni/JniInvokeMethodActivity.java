@@ -2,6 +2,7 @@ package com.example.ndk.jni;
 
 import android.os.Bundle;
 import android.view.View;
+import android.widget.TextView;
 
 import com.example.ndk.BaseActivity;
 import com.example.ndk.R;
@@ -23,7 +24,15 @@ public class JniInvokeMethodActivity extends BaseActivity {
                     @Override
                     public void callback() {
                         // 在主线程中被调用
-                        LogUtils.i("thread name is " + Thread.currentThread().getName());
+                        String msg = "thread name is " + Thread.currentThread().getName();
+                        LogUtils.i(msg);
+                        runOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {
+                                final TextView textView = findViewById(R.id.sample_text);
+                                textView.setText(msg);
+                            }
+                        });
                     }
                 });
             }
@@ -36,7 +45,15 @@ public class JniInvokeMethodActivity extends BaseActivity {
                     @Override
                     public void callback() {
                         // 在子线程中被调用
-                        LogUtils.i("thread name is " + Thread.currentThread().getName());
+                        String msg = "thread name is " + Thread.currentThread().getName();
+                        LogUtils.i(msg);
+                        runOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {
+                                final TextView textView = findViewById(R.id.sample_text);
+                                textView.setText(msg);
+                            }
+                        });
                     }
                 });
             }

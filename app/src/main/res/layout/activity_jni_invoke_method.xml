@@ -11,7 +11,8 @@
         android:id="@+id/sample_text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/show_result" />
+        android:text="@string/show_result"
+        android:textSize="@dimen/default_text_size" />
 
     <Button
         android:id="@+id/jni_native_callback"
