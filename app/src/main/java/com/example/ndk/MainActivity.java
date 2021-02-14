@@ -17,6 +17,7 @@ import com.example.ndk.jni.JniReferenceActivity;
 import com.example.ndk.jni.JniReferenceTypeActivity;
 import com.example.ndk.jni.JniStringActivity;
 import com.example.ndk.jni.JniThreadActivity;
+import com.example.ndk.jni.JniWaitNotifyActivity;
 import com.example.ndk.load.JNIDynamicLoadActivity;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
@@ -68,7 +69,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         } else if (R.id.create_thread == v.getId()) {
             startActivity(JniThreadActivity.class);
         } else if (R.id.thread_sync == v.getId()) {
-            startActivity(JNIDynamicLoadActivity.class);
+            startActivity(JniWaitNotifyActivity.class);
         } else if (R.id.bitmap_operate == v.getId()) {
             startActivity(JNIDynamicLoadActivity.class);
         }

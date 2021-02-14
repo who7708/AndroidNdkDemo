@@ -106,6 +106,13 @@ add_library(
         jni/jni_thread.cpp
 )
 
+add_library(
+        wait-notify-lib
+        SHARED
+        jni/jni_wait_notify.cpp
+        jni/jni_product_and_consumer.cpp
+)
+
 # 定义搜索路径
 include_directories(${CMAKE_SOURCE_DIR}/base/)
 include_directories(${CMAKE_SOURCE_DIR}/people/)
@@ -202,5 +209,10 @@ target_link_libraries(
 
 target_link_libraries(
         thread-lib
+        ${log-lib}
+)
+
+target_link_libraries(
+        wait-notify-lib
         ${log-lib}
 )

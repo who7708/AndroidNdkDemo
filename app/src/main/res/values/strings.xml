@@ -47,5 +47,8 @@
     <string name="jni_create_thread">无参数启动线程</string>
     <string name="jni_create_thread_with_args">有参数启动线程</string>
     <string name="jni_join_thread">线程join操作</string>
+    <string name="jni_thread_wait">JNI线程同步wait</string>
+    <string name="jni_thread_notify">JNI线程同步notify</string>
+    <string name="jni_product_and_consumer">生产者和消费者</string>
 
 </resources>
