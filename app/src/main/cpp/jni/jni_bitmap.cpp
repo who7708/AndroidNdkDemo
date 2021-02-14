@@ -11,26 +11,40 @@ extern "C" {
 #endif
 
 jobject generateBitmap(JNIEnv *env, int newWidth, int newHeight) {
+
+    jclass config_class = env->FindClass("android/graphics/Bitmap$Config");
+
+    jmethodID value_of_method = env->GetStaticMethodID(config_class, "valueOf",
+                                                       "(Ljava/lang/String;)Landroid/graphics/Bitmap/Config;");
+
+    jstring str = env->NewStringUTF("ARGB_8888");
+
+    jobject config = env->CallStaticObjectMethod(config_class, value_of_method, str);
+
     // 获取 bitmap class
-    jclass cls = env->FindClass("android/graphics/Bitmap");
+    jclass bitmap_clazz = env->FindClass("android/graphics/Bitmap");
+    jmethodID create_bitmap = env->GetStaticMethodID(bitmap_clazz, "createBitmap",
+                                                     "(IILandroid/graphics/Bitmap/Config;)Landroid/graphics/Bitmap;");
 
-    // 获取 bitmap constructor
-    jmethodID constructor_method = env->GetMethodID(cls, "<init>", "()V");
+    jobject newBitmap = env->CallStaticObjectMethod(bitmap_clazz, create_bitmap, newWidth, newHeight, config);
 
-    // 调用 constructor， 生成 bitmap 对象
-    jobject bitmap = env->NewObject(cls, constructor_method);
-
-    // 获取 setWidth、setHeight 方法
-    jmethodID width = env->GetMethodID(cls, "setWidth", "(I)V");
-    jmethodID height = env->GetMethodID(cls, "setHeight", "(I)V");
-
-    // 调用 setWidth、setHeight 方法， 设置对应值
-    env->CallVoidMethod(bitmap, width, newWidth);
-
-    env->CallVoidMethod(bitmap, height, newHeight);
+    // // 获取 bitmap constructor
+    // jmethodID constructor_method = env->GetMethodID(cls, "<init>", "()V");
+    //
+    // // 调用 constructor， 生成 bitmap 对象
+    // jobject bitmap = env->NewObject(cls, constructor_method);
+    //
+    // // 获取 setWidth、setHeight 方法
+    // jmethodID width = env->GetMethodID(cls, "setWidth", "(I)V");
+    // jmethodID height = env->GetMethodID(cls, "setHeight", "(I)V");
+    //
+    // // 调用 setWidth、setHeight 方法， 设置对应值
+    // env->CallVoidMethod(bitmap, width, newWidth);
+    //
+    // env->CallVoidMethod(bitmap, height, newHeight);
 
     // 返回对象
-    return bitmap;
+    return newBitmap;
 }
 /*
  * Class:     com_example_ndk_jni_JniBitmap
@@ -47,16 +61,17 @@ JNIEXPORT jobject JNICALL Java_com_example_ndk_jni_JniBitmap_callNativeMirrorBit
 
     void *bitmapPixels;
 
-    AndroidBitmap_lockPixels(env, bitmap, &bitmapPixels);
+    AndroidBitmap_lockPixels(env, bitmap, (void **) &bitmapPixels);
 
     uint32_t newWidth = bitmapInfo.width;
     uint32_t newHeight = bitmapInfo.height;
 
     auto *newBitmapPixels = new uint32_t[newWidth * newHeight];
 
+    // 此处转换有问题
     int whereToGet = 0;
-    for (uint32_t y = 0; y < newHeight; y++) {
-        for (uint32_t x = newWidth - 1; x >= 0; x--) {
+    for (int y = 0; y < newHeight; ++y) {
+        for (int x = newWidth - 1; x >= 0; x--) {
             uint32_t pixel = ((uint32_t *) bitmapPixels)[whereToGet++];
             newBitmapPixels[newWidth * y + x] = pixel;
         }
@@ -70,8 +85,8 @@ JNIEXPORT jobject JNICALL Java_com_example_ndk_jni_JniBitmap_callNativeMirrorBit
 
     AndroidBitmap_lockPixels(env, newBitmap, &resultBitmapPixels);
 
-    memcpy((uint32_t *) resultBitmapPixels, newBitmapPixels,
-           sizeof(uint32_t) * newWidth * newHeight);
+    // void *memcpy(void *str1, const void *str2, size_t n) 从存储区 str2 复制 n 个字节到存储区 str1。
+    memcpy((uint32_t *) resultBitmapPixels, newBitmapPixels, sizeof(uint32_t) * newWidth * newHeight);
 
     AndroidBitmap_unlockPixels(env, newBitmap);
 
@@ -104,9 +119,49 @@ JNIEXPORT jobject JNICALL Java_com_example_ndk_jni_JniBitmap_callNativeMirrorBit
     jint width = bitmapInfo.width;
     jint height = bitmapInfo.height;
 
-    return env->CallStaticObjectMethod(bitmap_clazz, create_bitmap, bitmap, 0, 0, width, height,
-                                       matrix,
-                                       true);
+    return env->CallStaticObjectMethod(bitmap_clazz, create_bitmap, bitmap, 0, 0, width, height, matrix, true);
+}
+
+JNIEXPORT void JNICALL Java_com_example_ndk_jni_JniBitmap_getBinaryBitmap
+        (JNIEnv *env, jobject jobj, jobject jBitmap) {
+    int result;
+    // 获取源Bitmap相关信息：宽、高等
+    AndroidBitmapInfo sourceInfo;
+    result = AndroidBitmap_getInfo(env, jBitmap, &sourceInfo);
+    if (result < 0) {
+        return;
+    }
+    // 获取源Bitmap像素数据 这里用的是32位的int类型 argb每个8位
+    uint32_t *sourceData;
+    //锁定像素的地址（不锁定的话地址可能会发生改变）
+    result = AndroidBitmap_lockPixels(env, jBitmap, (void **) &sourceData);
+    if (result < 0) {
+        return;
+    }
+    // 遍历各个像素点
+    int color;
+    int red, green, blue, alpha;
+    int width = sourceInfo.width;
+    int height = sourceInfo.height;
+    int w, h;
+    for (h = 0; h < height; h++) {
+        for (w = 0; w < width; w++) {
+            color = sourceData[h * width + w];
+            alpha = color & 0xff000000;
+            red = (color & 0x00ff0000) >> 16;
+            green = (color & 0x0000ff00) >> 8;
+            blue = color & 0x000000ff;
+            // 通过加权平均算法,计算出最佳像素值
+            color = red * 0.3 + green * 0.59 + blue * 0.11;
+            if (color <= 95) {
+                color = 0;
+            } else {
+                color = 255;
+            }
+            sourceData[h * width + w] = alpha | (color << 16) | (color << 8) | color;
+        }
+    }
+    AndroidBitmap_unlockPixels(env, jBitmap);
 }
 
 #ifdef __cplusplus

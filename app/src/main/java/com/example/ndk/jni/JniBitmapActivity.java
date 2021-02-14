@@ -27,7 +27,8 @@ public class JniBitmapActivity extends BaseActivity {
             @Override
             public void onClick(View v) {
                 Bitmap bitmap = ((BitmapDrawable) imageView.getDrawable()).getBitmap();
-                Bitmap mirrorBitmap = jniBitmap.callNativeMirrorBitmap(bitmap);
+                // Bitmap mirrorBitmap = jniBitmap.callNativeMirrorBitmap(bitmap);
+                Bitmap mirrorBitmap = jniBitmap.callNativeMirrorBitmap2(bitmap);
                 // Bitmap mirrorBitmap = mirrorBitmap(bitmap);
                 imageView.setImageBitmap(mirrorBitmap);
             }
@@ -45,5 +46,14 @@ public class JniBitmapActivity extends BaseActivity {
 
         //生成的翻转后的bitmap
         return Bitmap.createBitmap(bitmap, 0, 0, w, h, m, true);
+    }
+
+    Bitmap mirrorBitmap2(Bitmap bitmap, int width, int height) {
+        int w = bitmap.getWidth();
+        int h = bitmap.getHeight();
+        // 创建一个新的和SRC长度宽度一样的位图
+        // Bitmap newBitmap = Bitmap.createBitmap(ww, wh, Bitmap.Config.ARGB_8888);
+        Bitmap newBitmap = Bitmap.createBitmap(width, height, Bitmap.Config.ARGB_8888);
+        return newBitmap;
     }
 }

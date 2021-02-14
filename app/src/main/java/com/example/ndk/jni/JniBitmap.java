@@ -15,4 +15,6 @@ public class JniBitmap {
     public native Bitmap callNativeMirrorBitmap2(Bitmap bitmap);
 
     public native Bitmap callNativeMirrorBitmap(Bitmap bitmap);
+
+    public native void getBinaryBitmap(Bitmap bitmap);
 }
