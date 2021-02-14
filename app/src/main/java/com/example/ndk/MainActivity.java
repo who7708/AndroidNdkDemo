@@ -12,6 +12,7 @@ import com.example.ndk.jni.JniAccessMethodActivity;
 import com.example.ndk.jni.JniBasicTypeActivity;
 import com.example.ndk.jni.JniConstructorActivity;
 import com.example.ndk.jni.JniInvokeMethodActivity;
+import com.example.ndk.jni.JniReferenceActivity;
 import com.example.ndk.jni.JniReferenceTypeActivity;
 import com.example.ndk.jni.JniStringActivity;
 import com.example.ndk.load.JNIDynamicLoadActivity;
@@ -59,7 +60,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         } else if (R.id.access_java_constructor == v.getId()) {
             startActivity(JniConstructorActivity.class);
         } else if (R.id.reference_manage == v.getId()) {
-            startActivity(JNIDynamicLoadActivity.class);
+            startActivity(JniReferenceActivity.class);
         } else if (R.id.exception_manage == v.getId()) {
             startActivity(JNIDynamicLoadActivity.class);
         } else if (R.id.create_thread == v.getId()) {

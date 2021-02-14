@@ -7,7 +7,7 @@ package com.example.ndk.jni;
  */
 public class JniReferenceType {
     static {
-        System.loadLibrary("reference-lib");
+        System.loadLibrary("reference-type-lib");
     }
 
     public native String callNativeStringArray(String[] strArray);

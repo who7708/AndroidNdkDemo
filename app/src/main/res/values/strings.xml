@@ -40,5 +40,8 @@
     <string name="jni_native_callback">jni通过接口参数回调java方法</string>
     <string name="jni_thread_callback">jni子线程回调java主线程方法</string>
     <string name="jni_constructor">JNI访问java构造方法</string>
+    <string name="jni_local_reference">JNI局部引用类型管理</string>
+    <string name="jni_global_reference">JNI全局引用类型管理</string>
+    <string name="jni_weak_reference">JNI弱引用类型管理</string>
 
 </resources>

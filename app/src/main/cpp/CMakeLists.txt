@@ -57,7 +57,7 @@ add_library(
 )
 
 add_library(
-        reference-lib
+        reference-type-lib
         SHARED
         jni/jni_reference_type.cpp
 )
@@ -86,6 +86,12 @@ add_library(
         SHARED
         base/jvm.cpp
         jni/jni_constructor_class.cpp
+)
+
+add_library(
+        reference-lib
+        SHARED
+        jni/jni_reference.cpp
 )
 
 # 定义搜索路径
@@ -138,7 +144,7 @@ target_link_libraries( # Specifies the target library.
         ${log-lib})
 
 target_link_libraries( # Specifies the target library.
-        reference-lib
+        reference-type-lib
 
         # Links the target library to the log library
         # included in the NDK.
@@ -171,3 +177,8 @@ target_link_libraries( # Specifies the target library.
         # Links the target library to the log library
         # included in the NDK.
         ${log-lib})
+
+target_link_libraries(
+        reference-lib
+        ${log-lib}
+)
