@@ -100,6 +100,12 @@ add_library(
         jni/jni_exception.cpp
 )
 
+add_library(
+        thread-lib
+        SHARED
+        jni/jni_thread.cpp
+)
+
 # 定义搜索路径
 include_directories(${CMAKE_SOURCE_DIR}/base/)
 include_directories(${CMAKE_SOURCE_DIR}/people/)
@@ -191,5 +197,10 @@ target_link_libraries(
 
 target_link_libraries(
         exception-lib
+        ${log-lib}
+)
+
+target_link_libraries(
+        thread-lib
         ${log-lib}
 )

@@ -44,5 +44,8 @@
     <string name="jni_global_reference">JNI全局引用类型管理</string>
     <string name="jni_weak_reference">JNI弱引用类型管理</string>
     <string name="jni_exception">JNI异常处理</string>
+    <string name="jni_create_thread">无参数启动线程</string>
+    <string name="jni_create_thread_with_args">有参数启动线程</string>
+    <string name="jni_join_thread">线程join操作</string>
 
 </resources>

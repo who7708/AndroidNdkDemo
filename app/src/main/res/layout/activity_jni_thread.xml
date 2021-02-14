@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="@dimen/default_margin"
+    android:orientation="vertical"
+    tools:context=".jni.JniThreadActivity">
+
+    <TextView
+        android:id="@+id/sample_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/show_result"
+        android:textSize="@dimen/default_text_size" />
+
+    <Button
+        android:id="@+id/jni_create_thread"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/jni_create_thread" />
+
+    <Button
+        android:id="@+id/jni_create_thread_with_args"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/jni_create_thread_with_args" />
+
+    <Button
+        android:id="@+id/jni_join_thread"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/jni_join_thread" />
+</LinearLayout>
