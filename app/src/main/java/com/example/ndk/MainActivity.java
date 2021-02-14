@@ -11,6 +11,7 @@ import com.example.ndk.jni.JniAccessFieldActivity;
 import com.example.ndk.jni.JniAccessMethodActivity;
 import com.example.ndk.jni.JniBasicTypeActivity;
 import com.example.ndk.jni.JniConstructorActivity;
+import com.example.ndk.jni.JniExceptionActivity;
 import com.example.ndk.jni.JniInvokeMethodActivity;
 import com.example.ndk.jni.JniReferenceActivity;
 import com.example.ndk.jni.JniReferenceTypeActivity;
@@ -62,7 +63,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         } else if (R.id.reference_manage == v.getId()) {
             startActivity(JniReferenceActivity.class);
         } else if (R.id.exception_manage == v.getId()) {
-            startActivity(JNIDynamicLoadActivity.class);
+            startActivity(JniExceptionActivity.class);
         } else if (R.id.create_thread == v.getId()) {
             startActivity(JNIDynamicLoadActivity.class);
         } else if (R.id.thread_sync == v.getId()) {

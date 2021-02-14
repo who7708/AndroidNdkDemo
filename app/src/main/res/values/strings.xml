@@ -43,5 +43,6 @@
     <string name="jni_local_reference">JNI局部引用类型管理</string>
     <string name="jni_global_reference">JNI全局引用类型管理</string>
     <string name="jni_weak_reference">JNI弱引用类型管理</string>
+    <string name="jni_exception">JNI异常处理</string>
 
 </resources>
