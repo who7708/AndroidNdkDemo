@@ -27,8 +27,8 @@ public class JniBitmapActivity extends BaseActivity {
             @Override
             public void onClick(View v) {
                 Bitmap bitmap = ((BitmapDrawable) imageView.getDrawable()).getBitmap();
-                // Bitmap mirrorBitmap = jniBitmap.callNativeMirrorBitmap(bitmap);
-                Bitmap mirrorBitmap = jniBitmap.callNativeMirrorBitmap2(bitmap);
+                Bitmap mirrorBitmap = jniBitmap.callNativeMirrorBitmap(bitmap);
+                // Bitmap mirrorBitmap = jniBitmap.callNativeMirrorBitmap2(bitmap);
                 // Bitmap mirrorBitmap = mirrorBitmap(bitmap);
                 imageView.setImageBitmap(mirrorBitmap);
             }
