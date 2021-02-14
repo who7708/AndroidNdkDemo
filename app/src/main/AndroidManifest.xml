@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.NdkApplication">
-        <activity android:name=".jni.JniWaitNotifyActivity"></activity>
+        <activity android:name=".jni.JniBitmapActivity"></activity>
+        <activity android:name=".jni.JniWaitNotifyActivity" />
         <activity android:name=".jni.JniThreadActivity" />
         <activity android:name=".jni.JniExceptionActivity" />
         <activity android:name=".jni.JniReferenceActivity" />

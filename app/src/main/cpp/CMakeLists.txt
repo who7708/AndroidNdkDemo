@@ -113,6 +113,12 @@ add_library(
         jni/jni_product_and_consumer.cpp
 )
 
+add_library(
+        bitmap-lib
+        SHARED
+        jni/jni_bitmap.cpp
+)
+
 # 定义搜索路径
 include_directories(${CMAKE_SOURCE_DIR}/base/)
 include_directories(${CMAKE_SOURCE_DIR}/people/)
@@ -214,5 +220,11 @@ target_link_libraries(
 
 target_link_libraries(
         wait-notify-lib
+        ${log-lib}
+)
+
+target_link_libraries(
+        bitmap-lib
+        jnigraphics
         ${log-lib}
 )

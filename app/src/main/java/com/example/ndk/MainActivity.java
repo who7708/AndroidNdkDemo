@@ -10,6 +10,7 @@ import com.example.ndk.base.JniInvokeActivity;
 import com.example.ndk.jni.JniAccessFieldActivity;
 import com.example.ndk.jni.JniAccessMethodActivity;
 import com.example.ndk.jni.JniBasicTypeActivity;
+import com.example.ndk.jni.JniBitmapActivity;
 import com.example.ndk.jni.JniConstructorActivity;
 import com.example.ndk.jni.JniExceptionActivity;
 import com.example.ndk.jni.JniInvokeMethodActivity;
@@ -71,7 +72,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         } else if (R.id.thread_sync == v.getId()) {
             startActivity(JniWaitNotifyActivity.class);
         } else if (R.id.bitmap_operate == v.getId()) {
-            startActivity(JNIDynamicLoadActivity.class);
+            startActivity(JniBitmapActivity.class);
         }
     }
 
